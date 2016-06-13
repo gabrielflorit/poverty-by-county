@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv='Content-Type' content='text/html;charset=utf-8'>
+        <title>Poverty estimates by county</title>
+        <link type='text/css' rel='stylesheet' href='../static/css/povertyByCounty/choropleth.css'/>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700|Lusitana' rel='stylesheet' type='text/css'>
+        <!--[if lte IE 8]>
+        <link type='text/css' rel='stylesheet' href='static/css/povertyByCounty/choropleth-ie8.css'/>
+        <![endif]-->
+        <script type="text/javascript">
+
+          var _gaq = _gaq || [];
+          _gaq.push(['_setAccount', 'UA-27676826-1']);
+          _gaq.push(['_trackPageview']);
+
+          (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+          })();
+
+        </script>
+        <style>
+            .spark path {
+                stroke: #ddd;
+                stroke-width: 3;
+                fill: none;
+            }
+
+            .spark circle {
+                fill: #ddd;
+                stroke: none;
+            }
+
+            .spark text {
+                fill: #ddd;
+            }
+
+            .topFive text {
+                fill: #ddd;
+                cursor: default;
+            }
+
+            .topFive text:hover {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+
+            .topFiveInfo p {
+                font-size: 1em;
+                line-height: 1.5em;
+                margin: 0;
+                padding: 0;
+            }
+
+            .topFiveInfo body {
+                margin: 0;
+                padding: 0;
+            }
+
+            .topFiveInfoSubtitle {
+                fill: #ddd;
+                font-style: italic;
+            }
+
+            .countyName text {
+                font-size: 1.25em;
+                fill: #ddd;
+            }
+
+            .countyName .county {
+                font-size: 1.5em;
+            }
+
+            .countyName .state {
+                font-size: 1.25em;
+            }
+
+            .buttons {
+                width: 30%;
+            }
+
+            #controls {
+                margin-top: 20px;
+            }
+
+            #controls .text {
+                font-size: 1.5em;
+                padding: 0px;
+                margin: 0px;
+            }
+
+            svg {
+                width: 1060px;
+                height: 740px;
+            }
+
+            #header {
+                margin: 0 auto;
+                width: 1060px;
+            }
+
+            #chart {
+                width: 1060px;
+                height: 740px;
+                margin-top: 30px;
+            }
+
+            #explanation {
+                width: 1060px;
+            }
+
+            #explanation #about {
+                top: 0px;
+            }
+
+            #header .title {
+                font-family: Lusitana, georgia, "times new roman", times, serif;
+                font-size: 3em;
+                font-weight: normal;
+                padding: 0px;
+                margin-top: 30px;
+                margin-bottom: 20px;
+            }
+
+            #header .subtitle {
+                font-family: Lusitana, georgia, "times new roman", times, serif;
+                font-size: 1.1em;
+                line-height: 1.65em;
+                font-weight: normal;
+                padding: 0px;
+                margin: 0px;
+            }
+        </style>        
+    </head>
+    <body>
+        <div id='ie8'>This site has been optimized for modern browsers. Please consider switching to a modern browser such as <a href='http://www.google.com/chrome'>Chrome</a>.</div>
+        <div id='content'>
+            <div id='header'>
+                <p class='title'>A half-decade of rising poverty</p>
+                <p class='subtitle'>In the last five years the average poverty rate in the United States has risen by two percent. According to the U.S. Census Bureau, 46.2 million people lived in poverty in 2010 - five million under the age of five. The following map displays the percentage of people living in poverty by county for 2005-2010. Click on a county and use the arrow buttons (or left/right keys on your keyboard) to examine the county's poverty percentage change. Read about counties with highest poverty by clicking the list on the lower left.</p>
+            </div>
+            <div id='chart'></div>
+            <div id='explanation'>
+                <img id='loading' src='../static/img/povertyByCounty/clock.png' />
+                <div id='controls'>
+                    <div class='buttons' title='keyboard shortcut: left/right'>
+                        <div class='button'>
+                            <img id='year-left' src='../static/img/povertyByCounty/leftarrow32.png' />
+                        </div>
+                        <div class='text'>
+                            <p id='controls-year'>year: <span class='current'></span></p>
+                        </div>
+                        <div class='button'>
+                            <img id='year-right' src='../static/img/povertyByCounty/arrowright32.png' />
+                        </div> 
+                        <div class='end'></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script src='../static/js/povertyByCounty/d3/d3.min.js'></script>
+    <script src='../static/js/povertyByCounty/d3/d3.geo.min.js'></script>
+    <script src='../static/js/povertyByCounty/d3/d3.csv.min.js'></script>
+    <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></script>
+    <script src='../static/js/povertyByCounty/d3.poverty-by-county.js'></script>
+</html>
+
+
+
