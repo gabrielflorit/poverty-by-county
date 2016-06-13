@@ -401,7 +401,7 @@ d3.json('static/geojson/povertyByCounty/counties.json', function (json) {
 			d3.event.stopPropagation();
 		});
 
-	d3.json('../static/data/povertyByCounty/saipe.json', function (saipe) {
+	d3.json('static/data/povertyByCounty/saipe.json', function (saipe) {
 
 		for (var year in saipe) {
 			years.push(parseInt(year));
@@ -463,7 +463,7 @@ d3.json('static/geojson/povertyByCounty/counties.json', function (json) {
 			.data(topFiveData)
 			.enter()
 			.append('svg:image')
-			.attr('xlink:href', '../static/img/povertyByCounty/play_9x12.png')
+			.attr('xlink:href', 'static/img/povertyByCounty/play_9x12.png')
 			.attr('width', 9)
 			.attr('height', 12)
 			.attr('x', 0)
