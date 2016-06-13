@@ -353,7 +353,7 @@ legendTicks = legend.append('svg:g');
 map = svg.append('svg:g').attr('class', 'map')
 	.attr('transform', 'translate(50, 0)');
 
-d3.json('../static/geojson/povertyByCounty/counties.json', function (json) {
+d3.json('static/geojson/povertyByCounty/counties.json', function (json) {
 
 	var features = [];
 
@@ -372,7 +372,7 @@ d3.json('../static/geojson/povertyByCounty/counties.json', function (json) {
 		.attr('d', path)
 		.style('fill', noData);
 
-	d3.json('../static/data/povertyByCounty/saipe.json', function (saipe) {
+	d3.json('static/data/povertyByCounty/saipe.json', function (saipe) {
 
 		for (var year in saipe) {
 			years.push(parseInt(year));
