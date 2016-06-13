@@ -161,12 +161,12 @@ var topFive = svg.append('svg:g').attr('class', 'topFive')
 var topFiveInfo = svg.append('svg:g').attr('class', 'topFiveInfo')
 	.attr('transform', 'translate(270, 512)');
 
-d3.json('../static/data/povertyByCounty/states.json', function (json) {
+d3.json('static/data/povertyByCounty/states.json', function (json) {
 
 	states = json;
 });
 
-d3.json('../static/data/povertyByCounty/saipehighlights.json', function (json) {
+d3.json('static/data/povertyByCounty/saipehighlights.json', function (json) {
 
 	saipehighlights = json;
 });
@@ -279,7 +279,7 @@ function setTopFive() {
 		.slice(0, 6);
 }
 
-d3.json('../static/geojson/povertyByCounty/counties.json', function (json) {
+d3.json('static/geojson/povertyByCounty/counties.json', function (json) {
 
 	var features = [];
 
